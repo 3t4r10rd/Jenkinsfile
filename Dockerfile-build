@@ -1,0 +1,6 @@
+FROM docker:stable
+RUN apk update
+RUN apk add openjdk8 maven git
+ADD /deploy/Dockerfile /Dockerfile/
+ADD id_rsa /root/.ssh/id_rsa
+RUN chmod 600 /root/.ssh/id_rsa
